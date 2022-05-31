@@ -1,0 +1,18 @@
+@model aleck3a_webapp.Models.Item
+
+<div class="mt-4">
+    <div class="row">
+        <div class="col-12">
+            <h2>Delete Item</h2>
+        </div>
+    </div> 
+<form method="post">
+  <div class="form-group">
+    <label asp-for="Name"></label>
+    <input asp-for="Name" disabled type="text" class="form-control" >   
+  </div>
+  
+  <button type="submit" class="btn btn-pdanger">Delete</button>
+  <a asp-action="Index" class="btn btn-success">Back</a>
+</form>
+</div>
