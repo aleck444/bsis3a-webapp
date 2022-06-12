@@ -48,6 +48,7 @@ namespace aleck3a_webapp.Controllers
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            TypeM.Items = _db.Items.ToList();
             return View(TypeM);
         }
 

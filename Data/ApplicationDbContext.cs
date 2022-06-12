@@ -15,6 +15,7 @@ namespace aleck3a_webapp.Data
 
         public DbSet<Item> Items { get; set; }
         public DbSet<Type> Types { get; set; }
+        public DbSet<Instrument> Instruments { get; set; }
 
 
     }

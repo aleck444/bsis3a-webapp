@@ -30,9 +30,6 @@ namespace aleck3a_webapp.Models.ViewModels
                 ItemList.Add(sli);        
             }     
             return ItemList;
-        }
-    
-    
-    
+        }    
     }
 }

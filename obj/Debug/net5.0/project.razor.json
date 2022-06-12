@@ -15624,6 +15624,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\aleckrowen\\aleck3a-webapp\\Views\\Instrument\\Index.cshtml",
+      "TargetPath": "Views\\Instrument\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\aleckrowen\\aleck3a-webapp\\Views\\Type\\Edit.cshtml",
       "TargetPath": "Views\\Type\\Edit.cshtml",
       "FileKind": "mvc"
@@ -15664,6 +15669,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\aleckrowen\\aleck3a-webapp\\Views\\Instrument\\Edit.cshtml",
+      "TargetPath": "Views\\Instrument\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\aleckrowen\\aleck3a-webapp\\Views\\Item\\Delete.cshtml",
       "TargetPath": "Views\\Item\\Delete.cshtml",
       "FileKind": "mvc"
@@ -15691,6 +15701,11 @@
     {
       "FilePath": "c:\\Users\\aleckrowen\\aleck3a-webapp\\Views\\Type\\Delete.cshtml",
       "TargetPath": "Views\\Type\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\aleckrowen\\aleck3a-webapp\\Views\\Instrument\\Create.cshtml",
+      "TargetPath": "Views\\Instrument\\Create.cshtml",
       "FileKind": "mvc"
     }
   ],
