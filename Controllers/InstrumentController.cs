@@ -93,7 +93,7 @@ namespace aleck3a_webapp.Controllers
             return View(InstrumentTypeM);
         }
 
-        [HttpPost]
+         [HttpPost]
         [ActionName("Edit")]
         public IActionResult EditPost()
         {
@@ -101,10 +101,47 @@ namespace aleck3a_webapp.Controllers
             {
                 _db.Instruments.Update(InstrumentTypeM.Instrument);
                 _db.SaveChanges();
+
+                var InstrumentId = InstrumentTypeM.Instrument.Id;
+
+                string wwwrootPath = _hostingEnvironment.WebRootPath;
+
+                var files = HttpContext.Request.Form.Files;
+
+                var saveinstrument = _db.Instruments.Find(InstrumentId);
+
+                if(files.Count != 0)
+                    {
+                        var ImagePath = @"images\instrument\";
+                        var Extension = Path.GetExtension(files[0].FileName);
+                        var RelativeImagePath = ImagePath + InstrumentId + Extension;
+                        var aImagePath = Path.Combine(wwwrootPath, RelativeImagePath);
+
+                        using (var fileStream = new FileStream(aImagePath,FileMode.Create))
+                        {
+                            files[0].CopyTo(fileStream);
+                        }
+
+                        saveinstrument.ImagePath = RelativeImagePath;
+                        _db.SaveChanges();
+                        
+                    }
                 return RedirectToAction("Index");
             }
             return View(InstrumentTypeM);
         }
+        // [HttpPost]
+        // [ActionName("Edit")]
+        // public IActionResult EditPost()
+        // {
+        //     if(ModelState.IsValid)
+        //     {
+        //         _db.Instruments.Update(InstrumentTypeM.Instrument);
+        //         _db.SaveChanges();
+        //         return RedirectToAction("Index");
+        //     }
+        //     return View(InstrumentTypeM);
+        // }
 
         [HttpPost]
          public IActionResult Delete(int id)
