@@ -34,9 +34,9 @@
                             <td width="25%">@item.Type.Name</td>
                             <td width="25%">@item.Price</td>
                             <td>
-                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
+                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
                                 <form method="post">
-                                    <button asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                                    <button asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</button>
                                 </form>                            
                             </td>
                         </tr>

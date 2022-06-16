@@ -92,13 +92,13 @@ namespace aleck3a_webapp.Controllers
          public IActionResult DeletePost(int id)
         {
             var type = _db.Types.Find(id);
-            if(ModelState.IsValid)
+            if(type == null)
             {
-                _db.Types.Remove(type);
-                _db.SaveChanges();
-                return RedirectToAction("Index");
+              return NotFound();
             }
-            return View(TypeM);
+            _db.Types.Remove(type);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }   
 }

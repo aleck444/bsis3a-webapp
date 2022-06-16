@@ -74,7 +74,6 @@ namespace aleck3a_webapp.Controllers
             return View(item);
         }
 
-        
         [HttpPost]
         [ActionName("Delete")]
         public IActionResult DeletePost(int id)
@@ -87,6 +86,6 @@ namespace aleck3a_webapp.Controllers
             _db.Items.Remove(item);
             _db.SaveChanges();
             return RedirectToAction("Index");
-        }
+        } 
     }
 }

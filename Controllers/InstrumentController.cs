@@ -83,9 +83,9 @@ namespace aleck3a_webapp.Controllers
         }
 
          [HttpGet]
-        public IActionResult Edit(int id)
+        public IActionResult Edit(int Id)
         {
-            InstrumentTypeM.Instrument = _db.Instruments.Include(m => m.Item).SingleOrDefault(m => m.Id == id);
+            InstrumentTypeM.Instrument = _db.Instruments.Include(m => m.Item).SingleOrDefault(m => m.Id == Id);
            if(InstrumentTypeM.Instrument == null)
            {
                return NotFound();
@@ -101,8 +101,14 @@ namespace aleck3a_webapp.Controllers
             {
                 _db.Instruments.Update(InstrumentTypeM.Instrument);
                 _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(InstrumentTypeM);
+        }
 
-                var InstrumentId = InstrumentTypeM.Instrument.Id;
+        public void SaveIMG()
+        {
+             var InstrumentId = InstrumentTypeM.Instrument.Id;
 
                 string wwwrootPath = _hostingEnvironment.WebRootPath;
 
@@ -126,22 +132,7 @@ namespace aleck3a_webapp.Controllers
                         _db.SaveChanges();
                         
                     }
-                return RedirectToAction("Index");
-            }
-            return View(InstrumentTypeM);
         }
-        // [HttpPost]
-        // [ActionName("Edit")]
-        // public IActionResult EditPost()
-        // {
-        //     if(ModelState.IsValid)
-        //     {
-        //         _db.Instruments.Update(InstrumentTypeM.Instrument);
-        //         _db.SaveChanges();
-        //         return RedirectToAction("Index");
-        //     }
-        //     return View(InstrumentTypeM);
-        // }
 
         [HttpPost]
          public IActionResult Delete(int id)
